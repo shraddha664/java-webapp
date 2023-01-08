@@ -13,12 +13,12 @@
 <table>
 <tr>
 <td><label>Email:</label></td>
-<td><input type="email" name="email"/></td>
+<td><input type="email" name="email" value="${user.userEmail}"/></td>
 </tr>
 
 <tr>
 <td><label>Password:</label></td>
-<td><input type="password" name="password"/></td>
+<td><input type="password" name="password" /></td>
 </tr>
 <tr>
 <td><input type="submit" value="login"></td>

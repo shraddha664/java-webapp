@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.saru.DTO.User;
+
 
 @WebServlet("/registrationServlet")
 public class RegistrationServlet extends HttpServlet {
@@ -26,7 +28,7 @@ public class RegistrationServlet extends HttpServlet {
 		String userFullName=request.getParameter("fullname");
 		String userEmail=request.getParameter("useremail");
 		String insertSQL="INSERT INTO users values(?,?,?,?,?)";
-		
+		User user=new User();
 		try {
 			System.out.println("hey2");
 			Class.forName("com.mysql.jdbc.Driver");
@@ -37,7 +39,8 @@ public class RegistrationServlet extends HttpServlet {
 		prepareStatement.setString(3, userPassword);
 		prepareStatement.setString(4, userFullName);
 		prepareStatement.setString(5, userEmail);
-			
+			user.setUserEmail(userEmail);
+
 			prepareStatement.executeUpdate();
 		System.out.println("hey3");
 		
@@ -46,6 +49,7 @@ public class RegistrationServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		request.setAttribute("user", user);
 		System.out.println("hey4");
 		RequestDispatcher dispatcher=request.getRequestDispatcher("Login.jsp");
 		dispatcher.forward(request, response);
