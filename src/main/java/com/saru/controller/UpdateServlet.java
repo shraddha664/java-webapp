@@ -48,14 +48,6 @@ public class UpdateServlet extends HttpServlet {
 			PreparedStatement prepareStatement=connection.prepareStatement(updateSQL);
 			
 
-//		prepareStatement.setInt(1, Integer.parseInt(id));
-//	
-//		prepareStatement.setString(2, uName);
-//		prepareStatement.setString(3, upswrd);
-//		prepareStatement.setString(4, ufullname);
-//		System.out.println("yaho ho4 ");
-//
-//		prepareStatement.setString(5, uemail);
 		System.out.println("yaho ho5 ");
 
 		int s=prepareStatement.executeUpdate();

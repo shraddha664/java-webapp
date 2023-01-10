@@ -49,8 +49,14 @@
           
       </tr>
       </c:forEach>
+      
        </tbody> 
   </table>
+  <div>
+  <a href="Login.jsp" >
+      <button type="button" class="btn btn-danger"> Logout</button>
+      </a>
+  </div>
   
   
  
