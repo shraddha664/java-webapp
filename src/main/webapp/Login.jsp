@@ -7,8 +7,11 @@
 <title>Login page</title>
 </head>
 <body>
+
 <div align="center">
+${message}
 <h2>Login Form</h2>
+
 <form action="<%= request.getContextPath()%>/LoginServlet" method="post">
 <table>
 <tr>
